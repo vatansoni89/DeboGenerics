@@ -25,7 +25,7 @@ namespace Acme.Biz.Tests
             var actual = currentProduct.CalculateSuggestedPrice(10m);
 
             // Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual.Result);
         }
 
         [TestMethod()]

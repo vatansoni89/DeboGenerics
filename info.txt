@@ -1,0 +1,50 @@
+Array Initialization:
+1. new keyword:
+	var colorOptions = new string[2];
+	  colorOptions[0] = "Red";
+		colorOptions[2] = "Blue";
+2. Collection initioalizer arrays:
+    string[] arr = {"Red","Blue"};
+3. Retrieve values:
+     cw(arr[1]);
+4. Iterate through an array:
+     foreach:
+	   iterates through all elements.
+	   Array elements are read only for a foreach
+	   *Imp: We cannot change value of a foreach variable.
+	 for:
+	   Array elements are read/write only for a for loop
+	   we can change value using index.
+	   colorOptions[i] = colorOptions[i].ToLower();
+5. Arrays derived from System.Array class.
+6. Array Methods:
+     1. Array.indexOf(arrayVariable, "element");
+	 2. colorOptions.SetValue("Blue",3);
+
+7. Generic Class Best Practices (see pdf doc)
+
+_____________________________________________________________________________
+Example:
+
+    //Using a Generic Class
+	public class OperationResult<T>
+	{
+		public OperationResult(){ }
+		public OperationResult(T result, string message) : this()
+		{
+			this.Result = result;
+			this.Message = message;
+		}
+
+		public T Result { get; set; }
+		public string Message { get; set; }
+	}
+
+	var operationResult = new OperationResult<bool>(success, orderText);
+	var operationResult = new OperationResult<decimal>(value, orderText);
+_______________________________________________________________________________
+
+8. Only Generic method example:
+     public T RetrieveValue<T>(string sql, T defaultValue)
+
+9.

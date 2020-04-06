@@ -4,20 +4,22 @@
     /// Provides a success flag and message 
     /// useful as a method return type.
     /// </summary>
-    public class OperationResult
+    public class OperationResult<TResult, TMessage>
     {
         public OperationResult()
         {
         }
 
-        public OperationResult(bool result, string message) : this()
+        public OperationResult(TResult result, TMessage message) : this()
         {
             this.Result = result;
             this.Message = message;
         }
-
-        public bool Result { get; set; } ////<<===Can we make this datatype as variable??
-        public string Message { get; set; }
+        
+        ///TResult and TMessage are Type Variables.
+        ////Now these types will be decided with class signature.
+        public TResult Result { get; set; } 
+        public TMessage Message { get; set; }
     }
 
     public class OperationResultDecimal 

@@ -84,8 +84,12 @@ namespace Acme.Biz
         /// </summary>
         /// <param name="markupPercent">Percent used to mark up the cost.</param>
         /// <returns></returns>
-        public decimal CalculateSuggestedPrice(decimal markupPercent) =>
-             this.Cost + (this.Cost * markupPercent / 100);
+        public OperationResult<decimal,string> CalculateSuggestedPrice(decimal markupPercent)
+        { 
+            var v =  this.Cost + (this.Cost * markupPercent / 100);
+
+           return new OperationResult<decimal,string>(v,"");
+        }
 
         public override string ToString()
         {

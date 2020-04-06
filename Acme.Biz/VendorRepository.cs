@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Acme.Biz
 {
-    public class VendorRepository
+    public class VendorRepository // VendorRepository<T> We do it ideally when we need to have generic property in the class. 
     {
         /// <summary>
         /// Retrieve one vendor.
@@ -41,6 +41,13 @@ namespace Acme.Biz
             // Code that saves the vendor
 
             return success;
+        }
+
+        //Generic method example
+        public T RetrieveValue<T>(string sql, T defaultValue) // As we need only this method as generic so we used <T> here.
+        { 
+            T value = defaultValue;
+            return value;
         }
     }
 }
